@@ -1,3 +1,4 @@
+# Abstract Data Type (ADT) of a Deque (Double-Ended Queue)
 class ADTDeque(ABC):
   # Verifica se o deque está vazio
   @abstractmethod

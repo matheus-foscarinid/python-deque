@@ -1,3 +1,4 @@
+# LinkedDeque class implementation
 class LinkedDeque(ADTDeque):
   def __init__(self) -> None:
     self._head: Node = None
