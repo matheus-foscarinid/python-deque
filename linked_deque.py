@@ -31,8 +31,7 @@ class LinkedDeque(ADTDeque):
     else:
       new_node.next = self._head
       self._head.prev = new_node
-      self._head = new_
-      node
+      self._head = new_node
     self._count += 1
 
   def insert_last(self, value: any) -> None:

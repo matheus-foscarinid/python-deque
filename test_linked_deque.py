@@ -32,5 +32,18 @@ class TestLinkedDeque(unittest.TestCase):
         self.deque.insert_first(1)
         self.assertEqual(len(self.deque), 1)
 
+    def test_multi_cases(self):
+        self.deque.insert_first(1)
+        self.deque.insert_first(2)
+        self.deque.insert_last(3)
+        self.deque.insert_last(4)
+        
+        self.assertEqual(self.deque.remove_first().value, 2)
+        self.assertEqual(self.deque.remove_last().value, 4)
+        self.assertEqual(self.deque.remove_first().value, 1)
+        self.assertEqual(self.deque.remove_last().value, 3)
+        self.assertEqual(self.deque.is_empty(), True)
+
+
 if __name__ == '__main__':
     unittest.main()
