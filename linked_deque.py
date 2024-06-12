@@ -8,23 +8,28 @@ class LinkedDeque(ADTDeque):
     self._tail: Node = None
     self._count: int = 0
 
+  # Complexity: O(1)
   def __len__(self) -> int:
     return self._count
 
+  # Complexity: O(n)
   def __str__(self) -> str:
     values_str = " ".join([str(elm) for elm in self])
     return "[ " + values_str + " ]"
 
+  # Complexity: O(n)
   def __iter__(self) -> object:
     current = self._head
-    while current is not None:
+    while current:
       yield current.value
       current = current.next
 
+  # Complexity: O(1)
   def is_empty(self) -> bool:
     return self._count == 0
 
-  def insert_first(self, value: any) -> None:
+  # Complexity: O(1)
+  def insert_first(self, value: object) -> None:
     new_node = Node(value)
     if self.is_empty():
       self._head = self._tail = new_node
@@ -34,7 +39,8 @@ class LinkedDeque(ADTDeque):
       self._head = new_node
     self._count += 1
 
-  def insert_last(self, value: any) -> None:
+  # Complexity: O(1)
+  def insert_last(self, value: object) -> None:
     new_node = Node(value)
 
     if self.is_empty():
@@ -46,26 +52,42 @@ class LinkedDeque(ADTDeque):
 
     self._count += 1
 
-  def peek_first(self) -> any:
+  # Complexity: O(1)
+  def peek_first(self) -> object:
     return self._head.value
 
-  def peek_last(self) -> any:
+  # Complexity: O(1)
+  def peek_last(self) -> object:
     return self._tail.value
 
-  def remove_first(self) -> any:
+  # Complexity: O(1)
+  def remove_first(self) -> object:
     if self.is_empty():
       raise UnderflowError()
 
     first_node = self._head
-    self._head = self._head.next
+
+    if self._head == self._tail:
+      self._head = self._tail = None
+    else:
+      self._head = self._head.next
+      self._head.prev = None
+
     self._count -= 1
     return first_node
 
-  def remove_last(self) -> any:
+  # Complexity: O(1)
+  def remove_last(self) -> object:
     if self.is_empty():
       raise UnderflowError()
 
     last_node = self._tail
-    self._tail = self._tail.prev
+
+    if self._head == self._tail:
+      self._head = self._tail = None
+    else:
+      self._tail = self._tail.prev
+      self._tail.next = None
+
     self._count -= 1
     return last_node
