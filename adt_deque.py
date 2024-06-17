@@ -38,6 +38,6 @@ class ADTDeque(ABC):
   @abstractmethod
   def __str__(self) -> str: ...
 
-  # Retorna um iterador para o deque
+  # Retorna um iterador para os elementos do deque
   @abstractmethod
   def __iter__(self) -> object: ...

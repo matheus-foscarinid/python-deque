@@ -2,6 +2,8 @@ import unittest
 
 from linked_deque import LinkedDeque
 
+# Para executar os testes, utilizar:
+# python -m unittest test_linked_deque.py
 class TestLinkedDeque(unittest.TestCase):
     def setUp(self):
         self.deque = LinkedDeque()
