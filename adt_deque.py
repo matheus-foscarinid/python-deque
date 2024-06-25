@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 
-# Abstract Data Type (ADT) of a Deque (Double-Ended Queue)
 class ADTDeque(ABC):
   # Verifica se o deque está vazio
   @abstractmethod
@@ -8,27 +7,27 @@ class ADTDeque(ABC):
 
   # Insere um valor no início do deque
   @abstractmethod
-  def insert_first(self, value: any) -> None: ...
+  def insert_first(self, value: object) -> None: ...
 
   # Insere um valor no final do deque
   @abstractmethod
-  def insert_last(self, value: any) -> None: ...
+  def insert_last(self, value: object) -> None: ...
 
   # Remove e retorna o valor do início do deque
   @abstractmethod
-  def remove_first(self) -> any: ...
+  def remove_first(self) -> object: ...
 
   # Remove e retorna o valor do final do deque
   @abstractmethod
-  def remove_last(self) -> any: ...
+  def remove_last(self) -> object: ...
 
   # Retorna o valor do início do deque sem remover
   @abstractmethod
-  def peek_first(self) -> any: ...
+  def peek_first(self) -> object: ...
 
   # Retorna o valor do final do deque sem remover
   @abstractmethod
-  def peek_last(self) -> any: ...
+  def peek_last(self) -> object: ...
 
   # Retorna o número de elementos no deque
   @abstractmethod
@@ -41,3 +40,6 @@ class ADTDeque(ABC):
   # Retorna um iterador para os elementos do deque
   @abstractmethod
   def __iter__(self) -> object: ...
+
+
+

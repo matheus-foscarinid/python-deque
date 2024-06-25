@@ -1,6 +1,6 @@
 class Node:
-  def __init__(self, value: any) -> None:
-    self.value: any = value
+  def __init__(self, value: object) -> None:
+    self.value: object = value
     self.next: Node = None
     self.prev: Node = None
 
