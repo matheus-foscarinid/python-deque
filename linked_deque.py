@@ -1,5 +1,6 @@
 from adt_deque import ADTDeque
 from node import Node
+from errors import UnderflowError
 
 class LinkedDeque(ADTDeque):
   def __init__(self) -> None:
@@ -53,10 +54,14 @@ class LinkedDeque(ADTDeque):
 
   # Complexidade: O(1)
   def peek_first(self) -> object:
+    if self.is_empty():
+      raise UnderflowError()
     return self._head.value
 
   # Complexidade: O(1)
   def peek_last(self) -> object:
+    if self.is_empty():
+      raise UnderflowError()
     return self._tail.value
 
   # Complexidade: O(1)
